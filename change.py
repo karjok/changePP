@@ -24,6 +24,12 @@ def login(e,p):
 
 def change():
 	s.cookies.load()
+	pict = input('Input pict name: ')
+	try:
+		open(pict,'rb')
+	except:
+		print('not exist')
+		exit()
 	# file to upload
 	file = {'file1':('pict.jpg',open(pict,'rb'),'multipart/form-data')}
 	data = {}
